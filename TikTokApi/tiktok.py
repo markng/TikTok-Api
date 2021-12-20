@@ -843,11 +843,7 @@ class TikTokApi:
 
             res = self.get_data(url=api_url, **kwargs)
 
-            try:
-                res["itemList"]
-            except Exception:
-                logging.error("User's likes are most likely private")
-                return []
+            res["itemList"]
 
             for t in res.get("itemList", []):
                 response.append(t)
